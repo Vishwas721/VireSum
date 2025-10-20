@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 
 // Layout Components
@@ -48,6 +49,20 @@ const HomePage = () => {
 };
 
 function App() {
+  // Health check effect
+  useEffect(() => {
+    const checkBackendHealth = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/');
+        console.log('Backend health check response:', response.data);
+      } catch (error) {
+        console.error('Backend health check failed:', error);
+      }
+    };
+
+    checkBackendHealth();
+  }, []); // Empty dependency array means this runs once on component mount
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">

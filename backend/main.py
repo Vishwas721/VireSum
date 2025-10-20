@@ -13,6 +13,7 @@ app = FastAPI(
 # Set up CORS (Cross-Origin Resource Sharing)
 origins = [
     "http://localhost:5173",  # React/Vite frontend
+    "http://localhost:5174",  # Alternative Vite port
     "http://localhost:3000",  # Alternative common frontend port
 ]
 
