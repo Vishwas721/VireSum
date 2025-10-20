@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv
+db.sqlite3
+
+# Demo reports
+demo_reports/*
+!.gitkeep
+
+# Logs
+*.log
+
+# OS-specific
+.DS_Store
