@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-# from .routers import reports  # Placeholder for future routers
+from routers import patient_router
 
 # --- APP INITIALIZATION ---
 app = FastAPI(
@@ -26,7 +26,7 @@ app.add_middleware(
 
 # --- ROUTERS ---
 # Include routers from the /routers directory
-# app.include_router(reports.router, prefix="/api/v1")
+app.include_router(patient_router.router, prefix="/api/v1")
 
 
 # --- HEALTH CHECK ENDPOINT ---
